@@ -54,4 +54,4 @@ class Contact{
         }
     }
 }
-export default Contact;
+module.exports = Contact;
