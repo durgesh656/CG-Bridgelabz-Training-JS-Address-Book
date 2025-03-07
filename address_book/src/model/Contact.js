@@ -3,9 +3,9 @@ class Contact{
     constructor(firstName,lastName,address,city,state,zip,phoneNumber,email){
         this.validateName(firstName);
         this.validateName(lastName);
-        this.validateAddress(address, "Address", 4);
-        this.validateMinLength(city, "City", 4);
-        this.validateMinLength(state, "State", 4);
+        this.validateAddress(address, 4);
+        this.validateAddress(city, 4);
+        this.validateAddress(state, 4);
         this.validateZip(zip);
         this.validatePhone(phoneNumber);
         this.validateEmail(email);
@@ -29,7 +29,7 @@ class Contact{
 
     validateAddress = (value, minLength) => {
         if (value.length < minLength) {
-            throw new Error(`${value} for address is not valid it must have atleast ${minLength} characters`);
+            throw new Error(`${fieldName} must have at least ${minLength} characters.`)
         }
     }
 
