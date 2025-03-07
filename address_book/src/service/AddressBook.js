@@ -94,6 +94,20 @@ class AddressBook{
         });
     }
 
+      // Count contact by city or Count by state
+      countByCity = ()=>{
+        return this.contacts.reduce((result,contact)=>{
+            result[contact.city] = (result[contact.city] || 0) + 1;
+            return result;
+        },{});
+    }
+
+    countByState = ()=>{
+        return this.contacts.reduce((result,contact)=>{
+            result[contact.state] = (result[contact.state] || 0) + 1;
+            return result;
+        },{});
+        }
     // Method to get the contact
     getContact = ()=>{
         return this.contacts;
