@@ -8,7 +8,10 @@ try {
     // const contact2 = new Contact("Durgesh", "Kushwaha","bhopal chowk" ,"Delhi", "Madhya Pradesh", "462038", "9131733980", "durgesh123@gmail.com");
 
     myAddressBook.addContact(contact1);
-//myAddressBook.addContact(contact2);
+    //myAddressBook.addContact(contact2);
+    //console.log(myAddressBook.searchByCity("Bhopal"));
+    // console.log(myAddressBook.searchByState("Madhya Pradesh"));
+    
     console.log(myAddressBook.getContactCount());
     console.log(myAddressBook.getContact());
 } catch (error) {

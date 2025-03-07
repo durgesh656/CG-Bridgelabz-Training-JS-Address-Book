@@ -62,6 +62,16 @@ class AddressBook{
         return this.contacts.reduce((count) => count + 1, 0);
     }
 
+    // Method to search for a person using city or state
+    searchByCity(city) {
+        return this.contacts.filter(contact => contact.city === city);
+    }
+
+    // Search contacts by State
+    searchByState(state) {
+        return this.contacts.filter(contact => contact.state === state);
+    }
+
     // Method to get the contact
     getContact = ()=>{
         return this.contacts;
