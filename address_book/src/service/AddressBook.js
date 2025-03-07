@@ -35,6 +35,19 @@ class AddressBook{
         return contact;
     }
 
+     // Method to delete the contact from the book
+     deleteContact = (firstName, lastName) => {
+        const index = this.contacts.findIndex(contact =>
+            contact.firstName === firstName && contact.lastName === lastName
+        );
+
+        if (index === -1) {
+            throw new Error("Contact not found.");
+        }
+
+        return this.contacts.splice(index, 1)[0];
+    }
+
     // Method to get the contact
     getContact = ()=>{
         return this.contacts;
