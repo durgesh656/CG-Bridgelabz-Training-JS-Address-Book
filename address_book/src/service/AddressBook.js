@@ -10,6 +10,15 @@ class AddressBook{
         if(!contact instanceof Contact){
             throw new Error(`Invalid contact ${contact}. Must be an instance of Contact`);
         }
+
+        const duplicateCount = this.contacts.reduce((count, c) =>
+            (c.firstName === contact.firstName && c.lastName === contact.lastName ? count + 1 : count), 0
+        );
+
+        if (duplicateCount > 0) {
+            throw new Error(`Contact with name ${contact.firstName} ${contact.lastName} already exists.`);
+        }
+        
         // Add the new contact in the contact array
         this.contacts.push(contact);
     }
