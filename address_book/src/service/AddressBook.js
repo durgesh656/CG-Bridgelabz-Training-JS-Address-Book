@@ -72,6 +72,28 @@ class AddressBook{
         return this.contacts.filter(contact => contact.state === state);
     }
 
+     // View person by city
+     viewByCity = (city) => {
+        return this.contacts.reduce((result,contact) =>{
+            if(!result[contact.city]){
+                result[contact.city] =[];
+            }
+            result[contact.city].push(contact)
+            return result;
+        });
+    }
+
+    // view person by state
+    viewByState = (state) => {
+        return this.contacts.reduce((result,contact) =>{
+            if(!result[contact.state]){
+                result[contact.state] =[];
+            }
+            result[contact.state].push(contact)
+            return result;
+        });
+    }
+
     // Method to get the contact
     getContact = ()=>{
         return this.contacts;
