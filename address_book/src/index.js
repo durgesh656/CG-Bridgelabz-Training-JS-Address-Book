@@ -13,6 +13,11 @@ try {
     //myAddressBook.addContact(contact2);
     //console.log(myAddressBook.searchByCity("Bhopal"));
     // console.log(myAddressBook.searchByState("Madhya Pradesh"));
+
+    // Sort contacts alphabetically by name
+    const sortedContacts = myAddressBook.sortContactsByName();
+    sortedContacts.forEach(contact => console.log(contact.toString()));
+
     
     console.log(myAddressBook.getContactCount());
     console.log(myAddressBook.getContact());

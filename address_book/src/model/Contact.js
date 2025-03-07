@@ -35,7 +35,7 @@ class Contact{
 
     validateZip = (zipCode) => {
         const zipPattern = /^[0-9]{5,6}$/;
-        if(!zipPattern.test){
+        if(!zipPattern.test(zipCode.toString())){
             throw new Error("Zip must be of length 5 or 6 and only contains number " + zipCode);
         }
     }
@@ -52,6 +52,9 @@ class Contact{
         if (!emailPattern.test(email)) {
             throw new Error("Invalid email format.");
         }
+    }
+    toString() {
+        return `${this.firstName} ${this.lastName}, ${this.address}, ${this.city}, ${this.state}, ${this.zip}, ${this.phoneNumber}, ${this.email}`;
     }
 }
 module.exports = Contact;

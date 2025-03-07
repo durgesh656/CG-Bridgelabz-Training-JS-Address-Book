@@ -108,6 +108,15 @@ class AddressBook{
             return result;
         },{});
         }
+
+    // sort the contact data by the name 
+    sortContactsByName = () => {
+        return this.contacts.sort((a, b) => {
+            const nameA = (a.firstName + " " + a.lastName).toLowerCase();
+            const nameB = (b.firstName + " " + b.lastName).toLowerCase();
+            return nameA.localeCompare(nameB);
+        });
+    };
     // Method to get the contact
     getContact = ()=>{
         return this.contacts;
